@@ -18,7 +18,7 @@ const Counter = ({ initialValue = 0 }: Props) => {
 		clicks: 0,
 	})
 
-  const counterElement = useRef<HTMLHeadingElement>(null)
+	const counterElement = useRef<HTMLHeadingElement>(null)
 
 	const handleClick = (value: number) => {
 		setCounter(({ counter, clicks }) => ({
@@ -33,10 +33,13 @@ const Counter = ({ initialValue = 0 }: Props) => {
 
 			console.log('Se llego al val maximo')
 
-      const tl = gsap.timeline();
+			const tl = gsap.timeline()
 
-      tl.to(counterElement.current, { y: -10, duration: 0.2, ease: 'ease.out' })
-      .to(counterElement.current, { y: 0, duration: 1, ease: 'bounce.out' })
+			tl.to(counterElement.current, {
+				y: -10,
+				duration: 0.2,
+				ease: 'ease.out',
+			}).to(counterElement.current, { y: 0, duration: 1, ease: 'bounce.out' })
       
 		})()
 	}, [counter])
