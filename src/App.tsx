@@ -17,7 +17,7 @@ function App() {
 			<hr />
 			<CounterHook initialValue={0}/>
 			<hr />
-			<CounterReducerComponent initialValue={0}/>
+			<CounterReducerComponent/>
 		</>
 	)
 }
